@@ -120,11 +120,11 @@
 }
 
 .today-text {
-  color: #0b64ca;
+  color:$chosen-color;
 }
 
 .today-number {
-  color: #fff;
+  color: $background-color;
   &::before {
     content: "";
     display: block;
@@ -132,7 +132,7 @@
     height: 50px;
     border-radius: 50%;
     position: absolute;
-    background-color: #0b64ca;
+    background-color: $chosen-color;
     right: 0;
     left: 0;
     bottom: $unit * 0.6;
