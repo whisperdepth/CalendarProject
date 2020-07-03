@@ -1,0 +1,144 @@
+@import "variables.scss";
+
+.header {
+  height: $unit * 15;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.tools {
+  display: flex;
+  width: 100%;
+  border-bottom: $main-border-style;
+  height: $unit * 6;
+  align-items: center;
+
+  &__create-btn {
+    font-size: $unit * 1.4;
+    border-radius: $unit * 2.5;
+    box-shadow: $box-shadow;
+    height: $unit * 4;
+    width: $unit * 10;
+    border: none;
+
+    &:active {
+      box-shadow: none;
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  &__today-btn {
+    border: $main-border-style;
+    height: $unit * 3.5;
+    width: $unit * 8;
+  }
+
+  &__toggle-btn {
+    height: $unit * 3.5;
+    width: $unit * 2;
+    font-size: $unit * 3;
+    border: none;
+  }
+  &__current-month-text {
+    width: $unit * 20;
+    margin-left: $unit * 2;
+    font-size: $unit * 2;
+    font-weight: 700;
+    color: $main-color;
+  }
+}
+.btn {
+  cursor: pointer;
+  padding: 0;
+  margin-left: $unit * 2;
+  background-color: transparent;
+  outline: none;
+  font-weight: 700;
+  color: $main-color;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  border-bottom: $main-border-style;
+  height: $unit * 9;
+}
+
+.GMT {
+  width: 6%;
+  font-size: $unit * 1.2;
+  padding-top: $unit * 7;
+  color: $main-color;
+}
+
+.days-list {
+  display: flex;
+  width: 94%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% / 7);
+
+    &__text {
+      margin-top: $unit * 2;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: $unit * 1.2;
+      color: $main-color;
+      font-weight: 700;
+    }
+
+    &__number {
+      width: 100%;
+      height: $unit * 4.8;
+      text-align: center;
+      font-size: $unit * 2.5;
+      color: $main-color;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: $unit * 2;
+        border-left: $main-border-style;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.today-text {
+  color: #0b64ca;
+  
+}
+
+.today-number {
+  color: #fff;
+  &::before{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    background-color:#0b64ca;
+    right: 0;
+    left: 0;
+    bottom: $unit * 0.6;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
+  }
+}
