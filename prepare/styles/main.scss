@@ -121,19 +121,18 @@
 
 .today-text {
   color: #0b64ca;
-  
 }
 
 .today-number {
   color: #fff;
-  &::before{
+  &::before {
     content: "";
     display: block;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     position: absolute;
-    background-color:#0b64ca;
+    background-color: #0b64ca;
     right: 0;
     left: 0;
     bottom: $unit * 0.6;
