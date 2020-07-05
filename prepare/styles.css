@@ -1,15 +1,10 @@
 .header {
+  margin-left: 60px;
   height: 168px;
-  width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  left: 0;
-  right: 0;
-  top: 0;
-  margin-right: auto;
-  margin-left: auto;
-  position: fixed;
-  background: #fff;
+  position: relative;
 }
 
 .tools {
@@ -29,18 +24,27 @@
 }
 .tools__create-btn:active {
   box-shadow: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #0b64ca;
+  color: #0b64ca;
 }
 .tools__today-btn {
   border: 1px solid #dbd9d9;
   height: 42px;
   width: 96px;
 }
+.tools__today-btn:active {
+  box-shadow: none;
+  color: #0b64ca;
+}
 .tools__toggle-btn {
   height: 42px;
   width: 24px;
   font-size: 36px;
   border: none;
+}
+.tools__toggle-btn:active {
+  box-shadow: none;
+  color: #0b64ca;
 }
 .tools__current-month-text {
   width: 240px;
@@ -64,11 +68,11 @@
   width: 100%;
   display: flex;
   border-bottom: 1px solid #dbd9d9;
-  height: 102px;
+  height: 96px;
 }
 
 .GMT {
-  width: 6%;
+  width: 71px;
   font-size: 12px;
   padding-top: 84px;
   color: #5f5f5f;
@@ -87,7 +91,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% / 7);
+  width: 158px;
 }
 .days-list__item__text {
   margin-top: 24px;
@@ -139,16 +143,11 @@
 }
 
 .main {
-  width: 1200px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 168px;
-  margin-right: auto;
-  margin-left: auto;
-  left: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
+  width: 100%;
+  height: 420px;
+  margin-left: 60px;
+  overflow: auto;
+  position: relative;
 }
 
 .table {
@@ -158,32 +157,148 @@
 
 .hours-row {
   width: 100%;
+  display: flex;
 }
 
 .hour-value {
-  height: 42px;
-  width: 6%;
+  width: 71px;
   position: relative;
 }
 
 .hour-number {
   position: absolute;
-  bottom: 35px;
+  bottom: 51px;
   padding-left: 12px;
   display: block;
-  width: 48px;
+  width: 60px;
   background-color: #fff;
   font-size: 12px;
   color: #5f5f5f;
 }
 
 td {
+  height: 60px;
   border-bottom: 1px solid #dbd9d9;
   padding: 0;
+  position: relative;
 }
 
 .day-hour {
   border-left: 1px solid #dbd9d9;
+  width: 158px;
+}
+
+.arrow {
+  height: 2px;
+  width: 158px;
+  left: calc(71px + 158px * 0);
+  top: calc(-1px + 30px);
+  position: absolute;
+  background-color: #f00;
+  z-index: 2;
+}
+.arrow::after {
+  content: "";
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #f00;
+  margin-left: -6px;
+  margin-top: -6px;
+}
+
+.event {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 150px;
+  height: calc(15px - 4px + 45px);
+  top: calc(15px * 3);
+  left: 71px;
+  background-color: #b0b8ff;
+  z-index: 1;
+  border-radius: 6px;
+}
+.event__delete {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  height: 45px;
+  background-color: #fff;
+  box-shadow: 0px 6px 20px -6px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 100px;
+  text-align: center;
+  line-height: 45px;
+}
+.event__delete__cross {
+  display: inline-block;
+  transform: rotate(45deg);
+}
+.event__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.event__time {
+  font-weight: 700;
+}
+
+.event-settings {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  height: 350px;
+  background-color: #fff;
+  box-shadow: 0px 6px 20px -6px rgba(0, 0, 0, 0.75);
+  z-index: 3;
+  top: 200px;
+  left: 400px;
+}
+.event-settings__delete {
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 3;
+  right: 6px;
+  font-size: 24px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.event-settings__name {
+  margin-top: 30px;
+  margin-left: 100px;
+  margin-right: 10px;
+  border: none;
+  border-bottom: 2px solid #0b64ca;
+  outline: none;
+  color: #5f5f5f;
+  font-size: 18px;
+  font-weight: 700;
+}
+.event-settings__time {
+  margin-left: 100px;
+  margin-top: 100px;
+}
+.event-settings__save-btn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #0b64ca;
+  color: #fff;
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+  margin-top: 120px;
+  margin-left: 320px;
 }
 
 * {

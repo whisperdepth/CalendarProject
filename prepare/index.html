@@ -58,8 +58,29 @@
           </li>
         </ul>
       </div>
+      <form class="event-settings">
+        <button class="event-settings__delete">+</button>
+        <input type="text" class="event-settings__name"/>
+        <div class="event-settings__time">
+          <input type="date"/>
+          <input type="time">
+          <input type="time">
+        </div>
+        <button class="event-settings__save-btn">Save</button>
+      </form>
     </header>
+
     <main class="main">
+      <div class="arrow"></div>
+      <div class="event">
+        <span class="event__name">Meet friends</span>
+        <span class="event__time">00:45 - 1:45</span>
+        <button class="event__delete">
+          <span class="event__delete__cross">+</span>
+          <span>delete</span>
+        </button>
+      </div>
+
       <table class="table">
         <tbody>
           <tr class="hours-row">
