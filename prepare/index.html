@@ -20,6 +20,18 @@
     <header class="header">
       <div class="tools">
         <button class="btn tools__create-btn">+ Create</button>
+
+        <form class="event-settings">
+          <button class="event-settings__delete">+</button>
+          <input type="text" class="event-settings__name" />
+          <div class="event-settings__time">
+            <input type="date" />
+            <input type="time" />
+            <input type="time" />
+          </div>
+          <button class="event-settings__save-btn">Save</button>
+        </form>
+
         <button class="btn tools__today-btn">Today</button>
         <button class="btn tools__toggle-btn"><</button>
         <button class="btn tools__toggle-btn">></button>
@@ -58,16 +70,6 @@
           </li>
         </ul>
       </div>
-      <form class="event-settings">
-        <button class="event-settings__delete">+</button>
-        <input type="text" class="event-settings__name"/>
-        <div class="event-settings__time">
-          <input type="date"/>
-          <input type="time">
-          <input type="time">
-        </div>
-        <button class="event-settings__save-btn">Save</button>
-      </form>
     </header>
 
     <main class="week">

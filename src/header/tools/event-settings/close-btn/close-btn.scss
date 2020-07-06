@@ -1,0 +1,11 @@
+.close-btn {
+  transform: rotate(45deg);
+  position: absolute;
+  z-index: 3;
+  right: 6px;
+  font-size: 24px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}

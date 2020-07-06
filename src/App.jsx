@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import Header from "./header/Header.jsx";
 
 const App = () => {
-    return (
-        <div>hello world</div>
-    )
-}
+  return <Header />;
+};
 
 export default App;
