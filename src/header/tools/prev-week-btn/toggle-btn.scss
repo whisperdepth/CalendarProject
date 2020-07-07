@@ -3,6 +3,13 @@
     width: 35px;
     font-size: 36px;
     border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 24px;
+    background-color: transparent;
+    outline: none;
+    font-weight: 700;
+    color: #5f5f5f;
 
     &:active {
       box-shadow: none;
