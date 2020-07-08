@@ -3,25 +3,16 @@ import "./days.scss";
 import GMT from "./GMT/GMT";
 import Day from "./day/Day";
 import moment from "moment";
-import GetMonday from "./GetMonday.js";
 import GenerateWeek from "./GenerateWeek.js";
 
-const monday = GetMonday(new Date());
-
 class Days extends React.Component {
-  state = {
-    monday: GetMonday(new Date()),
-  };
-
-  nextWeek = () => {};
-
   render() {
-    const { monday } = this.state;
+    const { monday } = this.props;
     const week = GenerateWeek(monday);
 
     return (
       <div className="days">
-        <GMT />
+        <GMT monday={monday} />
         <ul className="days-list">
           {week.map((day) => (
             <Day

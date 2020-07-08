@@ -1,8 +1,8 @@
-import React from 'react';
-import './toggle-btn.scss';
+import React from "react";
+import "./toggle-btn.scss";
 
-const PrevWeekBtn = () => {
-return <button className="toggle-btn">←</button>
-}
+const PrevWeekBtn = ({ showPrevWeek }) => {
+  return <button onClick={showPrevWeek} className="toggle-btn">←</button>;
+};
 
 export default PrevWeekBtn;
