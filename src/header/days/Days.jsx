@@ -2,6 +2,8 @@ import React from "react";
 import "./days.scss";
 import GMT from "./GMT/GMT";
 import Day from "./day/Day";
+import moment from "moment";
+import GetMonday from './GetMonday';
 
 const days = [
   {
@@ -40,6 +42,9 @@ const days = [
     id: 7,
   },
 ];
+
+console.log(GetMonday());
+
 
 class Days extends React.Component {
   render() {
