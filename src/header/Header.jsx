@@ -3,13 +3,18 @@ import "./header.scss";
 import Tools from "./tools/Tools";
 import Days from "./days/Days";
 
-const Header = () => {
-  return (
+class Header extends React.Component {
+  
+
+  render(){
+    return (
     <header className="header">
       <Tools />
       <Days />
     </header>
   );
+  }
+  
 };
 
 export default Header;
