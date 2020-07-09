@@ -7,17 +7,33 @@ import NextWeekBtn from "./next-week-btn/NextWeekBtn";
 import CurrentMonth from "./current-month/CurrentMonth";
 import EventSettings from "./event-settings/EventSettings";
 
-const Tools = ({ showNextWeek, showPrevWeek, goCurrentWeek, monday }) => {
-  return (
-    <div className="tools">
-      <CreateBtn />
-      <EventSettings />
-      <TodayBtn goCurrentWeek={goCurrentWeek} />
-      <PrevWeekBtn showPrevWeek={showPrevWeek} />
-      <NextWeekBtn showNextWeek={showNextWeek} />
-      <CurrentMonth monday={monday} />
-    </div>
-  );
-};
+class Tools extends React.Component {
+  state = {
+    display: "none",
+  };
+
+  handleDisplay = () => {
+    this.setState({ display: "flex" });
+  };
+
+  handleClose = () => {
+    this.setState({ display: "none" });
+  };
+
+  render() {
+    const { showNextWeek, showPrevWeek, goCurrentWeek, monday } = this.props;
+    const { display } = this.state;
+    return (
+      <div className="tools">
+        <CreateBtn handleClose={this.handleClose} handleDisplay={this.handleDisplay} />
+        <EventSettings display={display} />
+        <TodayBtn goCurrentWeek={goCurrentWeek} />
+        <PrevWeekBtn showPrevWeek={showPrevWeek} />
+        <NextWeekBtn showNextWeek={showNextWeek} />
+        <CurrentMonth monday={monday} />
+      </div>
+    );
+  }
+}
 
 export default Tools;
