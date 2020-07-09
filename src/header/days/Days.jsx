@@ -3,12 +3,10 @@ import "./days.scss";
 import GMT from "./GMT/GMT";
 import Day from "./day/Day";
 import moment from "moment";
-import GenerateWeek from "./GenerateWeek.js";
 
 class Days extends React.Component {
   render() {
-    const { monday } = this.props;
-    const week = GenerateWeek(monday);
+    const { monday, week } = this.props;
 
     return (
       <div className="days">

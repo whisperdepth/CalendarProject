@@ -1,0 +1,10 @@
+.event {
+  &__name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__time {
+    font-weight: 700;
+  }
+}

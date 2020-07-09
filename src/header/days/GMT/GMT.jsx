@@ -1,13 +1,9 @@
 import React from "react";
 import "./GMT.scss";
-import moment from "moment";
 
 const GMT = ({ monday }) => {
   return (
-    <div className="GMT">{`GMT${moment(monday)
-      .format()
-      .toString()
-      .slice(19, 22)}`}</div>
+    <div className="GMT">{`${new Date(monday).toString().slice(24, 31)}`}</div>
   );
 };
 

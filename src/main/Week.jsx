@@ -41,12 +41,14 @@ const days = [
   },
 ];
 
-const Week = () => {
+
+
+const Week = ({ week }) => {
   return (
     <main className="week">
       <HoursGradation />
-      {days.map((day) => (
-        <Day key={day.id} />
+      {week.map((day) => (
+        <Day key={day.getTime()} id={day.getTime()} />
       ))}
     </main>
   );
