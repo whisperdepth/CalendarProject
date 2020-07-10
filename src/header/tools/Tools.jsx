@@ -21,12 +21,24 @@ class Tools extends React.Component {
   };
 
   render() {
-    const { showNextWeek, showPrevWeek, goCurrentWeek, monday } = this.props;
+    const {
+      showNextWeek,
+      showPrevWeek,
+      goCurrentWeek,
+      monday,
+      handleEventAdd,
+    } = this.props;
+    
     const { display } = this.state;
+
     return (
       <div className="tools">
         <CreateBtn handleDisplay={this.handleDisplay} />
-        <EventSettings handleClose={this.handleClose} display={display} />
+        <EventSettings
+          handleEventAdd={handleEventAdd}
+          handleClose={this.handleClose}
+          display={display}
+        />
         <TodayBtn goCurrentWeek={goCurrentWeek} />
         <PrevWeekBtn showPrevWeek={showPrevWeek} />
         <NextWeekBtn showNextWeek={showNextWeek} />

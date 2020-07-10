@@ -19,7 +19,7 @@ class EventSettings extends React.Component {
     this.setState({
       name: e.target.value,
     });
-  }
+  };
 
   handleDateChange = (e) => {
     this.setState({
@@ -36,6 +36,37 @@ class EventSettings extends React.Component {
   handleEndChange = (e) => {
     this.setState({
       endTime: e.target.value,
+    });
+  };
+
+  readInputsData = () => {
+    const { name, dateValue, startTime, endTime } = this.state;
+    const { handleEventAdd } = this.props;
+    const dayTime = new Date(
+      new Date(dateValue).getFullYear(),
+      new Date(dateValue).getMonth(),
+      new Date(dateValue).getDate()
+    ).getTime();
+
+    event = {
+      id: Math.random(),
+      name: name,
+      startTime: startTime,
+      endTime: endTime,
+      dayTime: new Date(
+        new Date(dateValue).getFullYear(),
+        new Date(dateValue).getMonth(),
+        new Date(dateValue).getDate()
+      ).getTime(),
+    };
+
+    handleEventAdd(event);
+
+    this.setState({
+      name: "",
+      startTime: "",
+      endTime: "",
+      dateValue: "",
     });
   };
 
@@ -59,7 +90,12 @@ class EventSettings extends React.Component {
     return (
       <form style={style} onSubmit={this.handleSubmit}>
         <CloseBtn handleClose={handleClose} />
-        <input onChange={this.handleNameChange} value={name} className="event-settings__name" type="text" />
+        <input
+          onChange={this.handleNameChange}
+          value={name}
+          className="event-settings__name"
+          type="text"
+        />
         <div className="event-settings__time">
           <input
             onChange={this.handleDateChange}
@@ -73,7 +109,7 @@ class EventSettings extends React.Component {
           />
           <input onChange={this.handleEndChange} value={endTime} type="time" />
         </div>
-        <SaveBtn />
+        <SaveBtn readInputsData={this.readInputsData} />
       </form>
     );
   }

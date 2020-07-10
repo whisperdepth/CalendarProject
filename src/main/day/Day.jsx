@@ -7,9 +7,11 @@ const Day = ({ id, events }) => {
 
   return (
     <div className="week-day">
-      {events.map((event) =>
-        event.dayTime === id ? <Event key={event.id} {...event} /> : null
-      )}
+      {events.map((event) => {
+        return event.dayTime === id ? (
+          <Event key={event.id} {...event} />
+        ) : null;
+      })}
       {idArr.map((id) => (
         <div className="hour" key={id} />
       ))}

@@ -45,7 +45,6 @@ class Event extends React.Component {
       width: "150px",
       height: `${getDuration(endTime, startTime)}px`,
       top: `${getMins(startTime)}px`,
-      left: "71px",
       backgroundColor: "#b0b8ff",
       zIndex: 1,
       borderRadius: "6px",

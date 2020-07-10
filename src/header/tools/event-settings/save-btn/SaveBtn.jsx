@@ -1,8 +1,12 @@
-import React from 'react';
-import './save-btn.scss';
+import React from "react";
+import "./save-btn.scss";
 
-const SaveBtn = () => {
-    return <button className='save-btn'>Save</button>
-}
+const SaveBtn = ({ readInputsData }) => {
+  return (
+    <button onClick={readInputsData} className="save-btn">
+      Save
+    </button>
+  );
+};
 
 export default SaveBtn;

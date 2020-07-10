@@ -13,14 +13,14 @@ class App extends React.Component {
         name: "Meet friends",
         startTime: "00:45",
         endTime: "01:45",
-        dayTime: 1594069200000,
+        dayTime: 1593982800000,
       },
       {
         id: 2,
         name: "Go to sleep",
         startTime: "03:45",
         endTime: "06:00",
-        dayTime: 1594069200000,
+        dayTime: 1593982800000,
       },
 
       {
@@ -28,9 +28,15 @@ class App extends React.Component {
         name: "Go to work",
         startTime: "10:45",
         endTime: "14:00",
-        dayTime: 1594069200000,
+        dayTime: 1593982800000,
       },
     ],
+  };
+
+  handleEventAdd = (obj) => {
+    this.setState({
+      events: this.state.events.concat(obj),
+    });
   };
 
   showNextWeek = () => {
@@ -69,6 +75,7 @@ class App extends React.Component {
     return (
       <>
         <Header
+          handleEventAdd={this.handleEventAdd}
           showPrevWeek={this.showPrevWeek}
           showNextWeek={this.showNextWeek}
           goCurrentWeek={this.goCurrentWeek}
