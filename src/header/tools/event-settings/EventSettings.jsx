@@ -4,8 +4,44 @@ import CloseBtn from "./close-btn/CloseBtn";
 import SaveBtn from "./save-btn/SaveBtn";
 
 class EventSettings extends React.Component {
+  state = {
+    name: "",
+    startTime: "",
+    endTime: "",
+    dateValue: "",
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  handleNameChange = (e) => {
+    this.setState({
+      name: e.target.value,
+    });
+  }
+
+  handleDateChange = (e) => {
+    this.setState({
+      dateValue: e.target.value,
+    });
+  };
+
+  handleStartChange = (e) => {
+    this.setState({
+      startTime: e.target.value,
+    });
+  };
+
+  handleEndChange = (e) => {
+    this.setState({
+      endTime: e.target.value,
+    });
+  };
+
   render() {
     const { display, handleClose } = this.props;
+    const { name, dateValue, startTime, endTime } = this.state;
 
     const style = {
       position: "absolute",
@@ -21,13 +57,21 @@ class EventSettings extends React.Component {
     };
 
     return (
-      <form style={style}>
+      <form style={style} onSubmit={this.handleSubmit}>
         <CloseBtn handleClose={handleClose} />
-        <input className="event-settings__name" type="text" />
+        <input onChange={this.handleNameChange} value={name} className="event-settings__name" type="text" />
         <div className="event-settings__time">
-          <input type="date" />
-          <input type="time" />
-          <input type="time" />
+          <input
+            onChange={this.handleDateChange}
+            value={dateValue}
+            type="date"
+          />
+          <input
+            onChange={this.handleStartChange}
+            value={startTime}
+            type="time"
+          />
+          <input onChange={this.handleEndChange} value={endTime} type="time" />
         </div>
         <SaveBtn />
       </form>

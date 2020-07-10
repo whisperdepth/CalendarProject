@@ -25,8 +25,8 @@ class Tools extends React.Component {
     const { display } = this.state;
     return (
       <div className="tools">
-        <CreateBtn handleClose={this.handleClose} handleDisplay={this.handleDisplay} />
-        <EventSettings display={display} />
+        <CreateBtn handleDisplay={this.handleDisplay} />
+        <EventSettings handleClose={this.handleClose} display={display} />
         <TodayBtn goCurrentWeek={goCurrentWeek} />
         <PrevWeekBtn showPrevWeek={showPrevWeek} />
         <NextWeekBtn showNextWeek={showNextWeek} />

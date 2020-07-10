@@ -21,10 +21,15 @@ class Event extends React.Component {
     display: "none",
   };
 
-  handleDisplay = () => {
+  handleDisplay = (e) => {
+    e.preventDefault();
     this.state.display === "none"
       ? this.setState({ display: "block" })
       : this.setState({ display: "none" });
+  };
+
+  handleClick = () => {
+    this.setState({ display: "none" });
   };
 
   render() {
@@ -47,10 +52,14 @@ class Event extends React.Component {
     };
 
     return (
-      <div onClick={this.handleDisplay} style={style}>
+      <div
+        onClick={this.handleClick}
+        onContextMenu={this.handleDisplay}
+        style={style}
+      >
         <span className="event__name">{name}</span>
         <span className="event__time">{`${startTime} - ${endTime}`}</span>
-        <DeleteBtn display={display}/>
+        <DeleteBtn display={display} />
       </div>
     );
   }
