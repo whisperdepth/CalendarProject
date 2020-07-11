@@ -3,7 +3,7 @@ import "./delete-btn.scss";
 
 class DeleteBtn extends React.Component {
   render() {
-    const { display } = this.props;
+    const { display, deleteId, handleEventDelete } = this.props;
 
     const style = {
       display: `${display}`,
@@ -22,7 +22,7 @@ class DeleteBtn extends React.Component {
       lineHeight: "45px",
     };
     return (
-      <button style={style}>
+      <button onClick={() => handleEventDelete(deleteId)} style={style}>
         <span className="delete-btn__cross">+</span> delete
       </button>
     );

@@ -39,6 +39,15 @@ class App extends React.Component {
     });
   };
 
+  handleEventDelete = (deleteId) => {
+    const newEvents = this.state.events.filter(
+      (event) => event.id !== deleteId
+    );
+    this.setState({
+      events: newEvents,
+    });
+  };
+
   showNextWeek = () => {
     const { monday } = this.state;
     const nextMonday = new Date(
@@ -82,7 +91,11 @@ class App extends React.Component {
           monday={monday}
           week={week}
         />
-        <Week week={week} events={events} />
+        <Week
+          handleEventDelete={this.handleEventDelete}
+          week={week}
+          events={events}
+        />
       </>
     );
   }

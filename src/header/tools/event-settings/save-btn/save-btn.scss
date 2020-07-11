@@ -10,4 +10,7 @@
   border-radius: 4px;
   margin-top: 120px;
   margin-left: 320px;
+  &:disabled{
+    background-color: #c4cdd8;
+  }
 }

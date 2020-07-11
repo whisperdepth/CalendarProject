@@ -1,20 +1,7 @@
 import React from "react";
 import "./event.scss";
 import DeleteBtn from "./delete-btn/DaleteBtn";
-
-const getMins = (time) => {
-  let hours = 0;
-
-  time.slice(0, 1) === "0"
-    ? (hours = +time.slice(1, 2))
-    : (hours = +time.slice(0, 2));
-
-  return +time.slice(3, 5) + 60 * hours;
-};
-
-const getDuration = (end, start) => {
-  return getMins(end) - getMins(start) - 4;
-};
+import { getMins, getDuration } from "../../../app/GetMins";
 
 class Event extends React.Component {
   state = {
@@ -33,7 +20,7 @@ class Event extends React.Component {
   };
 
   render() {
-    const { name, startTime, endTime } = this.props;
+    const { name, startTime, endTime, handleEventDelete, id } = this.props;
     const { display } = this.state;
 
     const style = {
@@ -58,7 +45,11 @@ class Event extends React.Component {
       >
         <span className="event__name">{name}</span>
         <span className="event__time">{`${startTime} - ${endTime}`}</span>
-        <DeleteBtn display={display} />
+        <DeleteBtn
+          deleteId={id}
+          handleEventDelete={handleEventDelete}
+          display={display}
+        />
       </div>
     );
   }

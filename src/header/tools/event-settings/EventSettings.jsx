@@ -2,6 +2,7 @@ import React from "react";
 import "./event-settings.scss";
 import CloseBtn from "./close-btn/CloseBtn";
 import SaveBtn from "./save-btn/SaveBtn";
+import { getMins } from "../../../app/GetMins";
 
 class EventSettings extends React.Component {
   state = {
@@ -42,11 +43,6 @@ class EventSettings extends React.Component {
   readInputsData = () => {
     const { name, dateValue, startTime, endTime } = this.state;
     const { handleEventAdd } = this.props;
-    const dayTime = new Date(
-      new Date(dateValue).getFullYear(),
-      new Date(dateValue).getMonth(),
-      new Date(dateValue).getDate()
-    ).getTime();
 
     event = {
       id: Math.random(),
@@ -59,7 +55,6 @@ class EventSettings extends React.Component {
         new Date(dateValue).getDate()
       ).getTime(),
     };
-
     handleEventAdd(event);
 
     this.setState({
@@ -73,7 +68,13 @@ class EventSettings extends React.Component {
   render() {
     const { display, handleClose } = this.props;
     const { name, dateValue, startTime, endTime } = this.state;
-
+    const isButtonAvailable = !(
+      name &&
+      dateValue &&
+      startTime &&
+      endTime &&
+      getMins(endTime) >= getMins(startTime)
+    );
     const style = {
       position: "absolute",
       display: `${display}`,
@@ -109,10 +110,12 @@ class EventSettings extends React.Component {
           />
           <input onChange={this.handleEndChange} value={endTime} type="time" />
         </div>
-        <SaveBtn readInputsData={this.readInputsData} />
+        <SaveBtn
+          isButtonAvailable={isButtonAvailable}
+          readInputsData={this.readInputsData}
+        />
       </form>
     );
   }
 }
-
 export default EventSettings;
