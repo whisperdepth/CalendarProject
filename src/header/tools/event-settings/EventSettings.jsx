@@ -16,27 +16,10 @@ class EventSettings extends React.Component {
     e.preventDefault();
   };
 
-  handleNameChange = (e) => {
+  handleChange = (event) => {
+    const { name, value } = event.target;
     this.setState({
-      name: e.target.value,
-    });
-  };
-
-  handleDateChange = (e) => {
-    this.setState({
-      dateValue: e.target.value,
-    });
-  };
-
-  handleStartChange = (e) => {
-    this.setState({
-      startTime: e.target.value,
-    });
-  };
-
-  handleEndChange = (e) => {
-    this.setState({
-      endTime: e.target.value,
+      [name]: value,
     });
   };
 
@@ -92,23 +75,31 @@ class EventSettings extends React.Component {
       <form style={style} onSubmit={this.handleSubmit}>
         <CloseBtn handleClose={handleClose} />
         <input
-          onChange={this.handleNameChange}
+          onChange={this.handleChange}
           value={name}
           className="event-settings__name"
           type="text"
+          name="name"
         />
         <div className="event-settings__time">
           <input
-            onChange={this.handleDateChange}
+            onChange={this.handleChange}
             value={dateValue}
             type="date"
+            name="dateValue"
           />
           <input
-            onChange={this.handleStartChange}
+            onChange={this.handleChange}
             value={startTime}
             type="time"
+            name="startTime"
           />
-          <input onChange={this.handleEndChange} value={endTime} type="time" />
+          <input
+            onChange={this.handleChange}
+            value={endTime}
+            type="time"
+            name="endTime"
+          />
         </div>
         <SaveBtn
           isButtonAvailable={isButtonAvailable}
