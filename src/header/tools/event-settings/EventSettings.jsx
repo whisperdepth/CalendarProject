@@ -29,9 +29,9 @@ class EventSettings extends React.Component {
 
     event = {
       id: Math.random(),
-      name: name,
-      startTime: startTime,
-      endTime: endTime,
+      name,
+      startTime,
+      endTime,
       dayTime: new Date(
         new Date(dateValue).getFullYear(),
         new Date(dateValue).getMonth(),
