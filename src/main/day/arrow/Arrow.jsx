@@ -9,7 +9,7 @@ class Arrow extends React.Component {
   };
 
   componentDidMount() {
-    setInterval(
+    this.interval = setInterval(
       () =>
         this.setState({
           currentTime: moment(new Date()).format("HH:mm"),
@@ -17,6 +17,11 @@ class Arrow extends React.Component {
       60 * 1000
     );
   }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   render() {
     const { currentTime } = this.state;
     const top = getMins(currentTime);
