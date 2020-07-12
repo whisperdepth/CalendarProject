@@ -30,7 +30,7 @@ class EventSettings extends React.Component {
     const { handleEventAdd } = this.props;
 
     event = {
-      id: Math.random(),
+      id: Math.random().toString(),
       name,
       startTime,
       endTime,

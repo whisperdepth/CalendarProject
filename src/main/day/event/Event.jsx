@@ -33,7 +33,7 @@ class Event extends React.Component {
       height: `${getDuration(endTime, startTime)}px`,
       minHeight: "45px",
       top: `${getMins(startTime)}px`,
-      backgroundColor: "#0b64ca",
+      backgroundColor: "#0b64ca91",
       zIndex: 1,
       borderRadius: "6px",
       color: "#fff",
@@ -44,6 +44,7 @@ class Event extends React.Component {
         onClick={this.handleClick}
         onContextMenu={this.handleDisplay}
         style={style}
+        className="event"
       >
         <span title={name} className="event__name">
           {name}

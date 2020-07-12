@@ -3,49 +3,32 @@ import Header from "../header/Header.jsx";
 import Week from "../main/Week";
 import GetMonday from "./GetMonday.js";
 import GenerateWeek from "./GenerateWeek.js";
+import { fetchEventsList, createEvent, deleteEvent } from "./eventsGateway.js";
 
 class App extends React.Component {
   state = {
     monday: GetMonday(),
-    events: [
-      {
-        id: 1,
-        name: "Meet friends",
-        startTime: "00:45",
-        endTime: "01:45",
-        dayTime: 1593982800000,
-      },
-      {
-        id: 2,
-        name: "Go to sleep",
-        startTime: "03:45",
-        endTime: "06:00",
-        dayTime: 1593982800000,
-      },
-
-      {
-        id: 3,
-        name: "Go to work",
-        startTime: "10:45",
-        endTime: "14:00",
-        dayTime: 1593982800000,
-      },
-    ],
+    events: [],
   };
 
-  handleEventAdd = (obj) => {
-    this.setState({
-      events: this.state.events.concat(obj),
+  componentDidMount() {
+    this.getEventsList();
+  }
+
+  getEventsList = () => {
+    fetchEventsList().then((eventsList) => {
+      this.setState({
+        events: eventsList,
+      });
     });
+  };
+
+  handleEventAdd = (eventObj) => {
+    createEvent(eventObj).then(() => this.getEventsList());
   };
 
   handleEventDelete = (deleteId) => {
-    const newEvents = this.state.events.filter(
-      (event) => event.id !== deleteId
-    );
-    this.setState({
-      events: newEvents,
-    });
+    deleteEvent(deleteId).then(() => this.getEventsList());
   };
 
   showNextWeek = () => {
