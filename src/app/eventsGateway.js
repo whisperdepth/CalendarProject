@@ -1,13 +1,11 @@
 const baseUrl = "https://5eca703a38df960016511722.mockapi.io/api/v1/events";
 
 export const fetchEventsList = async () => {
-  const eventsList = await fetch(baseUrl).then((response) => {
-    if (response.ok) {
-      return response.json();
-    }
-  });
-
-  if (!eventsList) alert("Internal server error. Can't display events");
+  const eventsList = await fetch(baseUrl).then((response) =>
+    response.ok
+      ? response.json()
+      : alert("Internal server error. Can't display events")
+  );
 
   return eventsList;
 };
