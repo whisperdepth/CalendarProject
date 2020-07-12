@@ -16,9 +16,9 @@ class App extends React.Component {
   }
 
   getEventsList = () => {
-    fetchEventsList().then((eventsList) => {
+    fetchEventsList().then((events) => {
       this.setState({
-        events: eventsList,
+        events,
       });
     });
   };
