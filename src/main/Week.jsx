@@ -1,5 +1,5 @@
 import React from "react";
-import "./week.scss";
+import "./week.css";
 import HoursGradation from "./hours-gradation/HoursGradation";
 import Day from "./day/Day";
 

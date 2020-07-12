@@ -1,5 +1,5 @@
 import React from "react";
-import "./tools.scss";
+import "./tools.css";
 import CreateBtn from "./create-btn/CreateBtn";
 import TodayBtn from "./today-btn/TodayBtn";
 import PrevWeekBtn from "./prev-week-btn/PrevWeekBtn";

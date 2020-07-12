@@ -1,5 +1,5 @@
 import React from "react";
-import "./current-month.scss";
+import "./current-month.css";
 import moment from "moment";
 
 const showMonths = (monday) => {

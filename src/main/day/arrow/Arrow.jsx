@@ -1,5 +1,5 @@
 import React from "react";
-import "./arrow.scss";
+import "./arrow.css";
 import moment from "moment";
 import getMins from "../../../app/GetMins";
 

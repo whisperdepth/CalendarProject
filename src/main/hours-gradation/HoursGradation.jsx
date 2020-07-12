@@ -1,5 +1,5 @@
 import React from "react";
-import "./hours-gradation.scss";
+import "./hours-gradation.css";
 
 const hoursArray = new Array(24).fill(0).map((el, index) => {
   if (index === 0) return "";

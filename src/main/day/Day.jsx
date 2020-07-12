@@ -1,5 +1,5 @@
 import React from "react";
-import "./day.scss";
+import "./day.css";
 import Event from "./event/Event";
 import Arrow from "./arrow/Arrow";
 

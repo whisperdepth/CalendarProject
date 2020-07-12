@@ -1,5 +1,5 @@
 import React from "react";
-import "./GMT.scss";
+import "./GMT.css";
 
 const GMT = ({ monday }) => {
   return (

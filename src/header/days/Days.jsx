@@ -1,5 +1,5 @@
 import React from "react";
-import "./days.scss";
+import "./days.css";
 import GMT from "./GMT/GMT";
 import Day from "./day/Day";
 import moment from "moment";

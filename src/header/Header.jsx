@@ -1,5 +1,5 @@
 import React from "react";
-import "./header.scss";
+import "./header.css";
 import Tools from "./tools/Tools";
 import Days from "./days/Days";
 
