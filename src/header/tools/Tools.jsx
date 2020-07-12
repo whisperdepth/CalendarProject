@@ -28,7 +28,7 @@ class Tools extends React.Component {
       monday,
       handleEventAdd,
     } = this.props;
-    
+
     const { display } = this.state;
 
     return (
