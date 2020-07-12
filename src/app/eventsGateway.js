@@ -4,7 +4,7 @@ export const fetchEventsList = async () => {
   return await fetch(baseUrl).then((response) =>
     response.ok
       ? response.json()
-      : alert("Internal server error. Can't display events")
+      : alert("Internal server error. Can't display events.")
   );
 };
 
