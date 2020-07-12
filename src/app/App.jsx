@@ -24,11 +24,15 @@ class App extends React.Component {
   };
 
   handleEventAdd = (eventObj) => {
-    createEvent(eventObj).then(() => this.getEventsList());
+    createEvent(eventObj)
+      .then(() => this.getEventsList())
+      .catch(() => alert("Internal server error. Failed to create event"));
   };
 
   handleEventDelete = (deleteId) => {
-    deleteEvent(deleteId).then(() => this.getEventsList());
+    deleteEvent(deleteId)
+      .then(() => this.getEventsList())
+      .catch(() => alert("Internal server error. Failed to delete event"));
   };
 
   showNextWeek = () => {
