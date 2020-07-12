@@ -11,7 +11,7 @@ export const fetchEventsList = async () => {
 };
 
 export const createEvent = async (eventObj) => {
-   await fetch(baseUrl, {
+  await fetch(baseUrl, {
     method: "POST",
     headers: {
       "Content-Type": "application/json;charset=utf-8",
@@ -21,7 +21,7 @@ export const createEvent = async (eventObj) => {
 };
 
 export const deleteEvent = async (eventId) => {
-   await fetch(`${baseUrl}/${eventId}`, {
+  await fetch(`${baseUrl}/${eventId}`, {
     method: "DELETE",
   });
 };
