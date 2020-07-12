@@ -9,7 +9,7 @@ export default () => {
 
   const minsArray = new Array(97)
     .fill(15)
-    .map((hour, index) => getTimeFromMins(hour * index));
+    .map((value, index) => getTimeFromMins(value * index));
 
   return minsArray;
 };
