@@ -16,8 +16,8 @@ class DeleteBtn extends React.Component {
       boxShadow: "0px 6px 20px -6px rgba(0,0,0,0.75)",
       position: "absolute",
       zIndex: "1",
-      top: "50px",
-      left: "100px",
+      top: "12px",
+      left: "60px",
       textAlign: "center",
       lineHeight: "45px",
     };

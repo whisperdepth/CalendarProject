@@ -1,7 +1,7 @@
 import React from "react";
 import "./event.scss";
 import DeleteBtn from "./delete-btn/DaleteBtn";
-import { getMins, getDuration } from "../../../app/GetMins";
+import getMins, { getDuration } from "../../../app/GetMins";
 
 class Event extends React.Component {
   state = {
@@ -31,10 +31,12 @@ class Event extends React.Component {
       alignItems: "center",
       width: "150px",
       height: `${getDuration(endTime, startTime)}px`,
+      minHeight: "45px",
       top: `${getMins(startTime)}px`,
-      backgroundColor: "#b0b8ff",
+      backgroundColor: "#0b64ca",
       zIndex: 1,
       borderRadius: "6px",
+      color: "#fff",
     };
 
     return (
@@ -43,7 +45,9 @@ class Event extends React.Component {
         onContextMenu={this.handleDisplay}
         style={style}
       >
-        <span className="event__name">{name}</span>
+        <span title={name} className="event__name">
+          {name}
+        </span>
         <span className="event__time">{`${startTime} - ${endTime}`}</span>
         <DeleteBtn
           deleteId={id}

@@ -2,14 +2,16 @@ import React from "react";
 import "./event-settings.scss";
 import CloseBtn from "./close-btn/CloseBtn";
 import SaveBtn from "./save-btn/SaveBtn";
-import { getMins } from "../../../app/GetMins";
+import getMins  from "../../../app/GetMins";
+import getHoursArray from "./getHoursArray";
 
 class EventSettings extends React.Component {
   state = {
     name: "",
-    startTime: "",
-    endTime: "",
+    startTime: "09:00",
+    endTime: "09:15",
     dateValue: "",
+    selectValue: "",
   };
 
   handleSubmit = (e) => {
@@ -42,8 +44,8 @@ class EventSettings extends React.Component {
 
     this.setState({
       name: "",
-      startTime: "",
-      endTime: "",
+      startTime: "09:00",
+      endTime: "09:15",
       dateValue: "",
     });
   };
@@ -58,6 +60,7 @@ class EventSettings extends React.Component {
       endTime &&
       getMins(endTime) >= getMins(startTime)
     );
+
     const style = {
       position: "absolute",
       display: `${display}`,
@@ -88,18 +91,24 @@ class EventSettings extends React.Component {
             type="date"
             name="dateValue"
           />
-          <input
+          <select
+            name="startTime"
             onChange={this.handleChange}
             value={startTime}
-            type="time"
-            name="startTime"
-          />
-          <input
-            onChange={this.handleChange}
-            value={endTime}
-            type="time"
-            name="endTime"
-          />
+          >
+            {getHoursArray().map((hour) => (
+              <option key={hour} value={hour}>
+                {hour}
+              </option>
+            ))}
+          </select>
+          <select name="endTime" onChange={this.handleChange} value={endTime}>
+            {getHoursArray().map((hour) => (
+              <option key={hour} value={hour}>
+                {hour}
+              </option>
+            ))}
+          </select>
         </div>
         <SaveBtn
           isButtonAvailable={isButtonAvailable}

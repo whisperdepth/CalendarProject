@@ -1,4 +1,4 @@
-export const getMins = (time) => {
+const getMins = (time) => {
   let hours = 0;
 
   time.slice(0, 1) === "0"
@@ -11,3 +11,5 @@ export const getMins = (time) => {
 export const getDuration = (end, start) => {
   return getMins(end) - getMins(start) - 4;
 };
+
+export default getMins;
