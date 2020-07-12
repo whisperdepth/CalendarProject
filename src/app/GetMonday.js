@@ -1,8 +1,6 @@
 export default () => {
   const date = new Date();
-
   const dayOfWeek = new Date(date).getDay();
-
   const differenceFromMonday = dayOfWeek === 0 ? -6 : 1 - dayOfWeek;
 
   const monday = new Date(
