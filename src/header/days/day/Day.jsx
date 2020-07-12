@@ -2,13 +2,13 @@ import React from "react";
 import "./day.scss";
 
 const getIdMatch = (id) => {
-  const toCompare = new Date(
+  const todayId = new Date(
     new Date().getFullYear(),
     new Date().getMonth(),
     new Date().getDate()
   ).getTime();
 
-  return id === toCompare;
+  return id === todayId;
 };
 
 const Day = ({ name, date, id }) => {
