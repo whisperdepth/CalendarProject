@@ -1,4 +1,13 @@
 .event-settings {
+  position: absolute;
+  flex-direction: column;
+  width: 450px;
+  height: 350px;
+  background-color: #fff;
+  box-shadow: 0px 6px 20px -6px rgba(0, 0, 0, 0.75);
+  z-index: 3;
+  top: 200px;
+  left: 400px;
   &__name {
     margin-top: 30px;
     margin-left: 100px;

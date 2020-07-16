@@ -24,19 +24,8 @@ class Event extends React.Component {
     const { display } = this.state;
 
     const style = {
-      position: "absolute",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-around",
-      alignItems: "center",
-      width: "150px",
       height: `${getDuration(endTime, startTime)}px`,
-      minHeight: "45px",
       top: `${getMins(startTime)}px`,
-      backgroundColor: "#0b64ca91",
-      zIndex: 1,
-      borderRadius: "6px",
-      color: "#fff",
     };
 
     return (

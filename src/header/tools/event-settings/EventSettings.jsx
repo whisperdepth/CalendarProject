@@ -62,20 +62,15 @@ class EventSettings extends React.Component {
     );
 
     const style = {
-      position: "absolute",
       display: `${display}`,
-      flexDirection: "column",
-      width: "450px",
-      height: "350px",
-      backgroundColor: "#fff",
-      boxShadow: "0px 6px 20px -6px rgba(0, 0, 0, 0.75)",
-      zIndex: "3",
-      top: "200px",
-      left: "400px",
     };
 
     return (
-      <form style={style} onSubmit={this.handleSubmit}>
+      <form
+        style={style}
+        onSubmit={this.handleSubmit}
+        className="event-settings"
+      >
         <CloseBtn handleClose={handleClose} />
         <input
           onChange={this.handleChange}
