@@ -1,16 +1,13 @@
 import React from "react";
-import "./header.css";
-import Tools from "./tools/Tools";
-import Days from "./days/Days";
+import "./header.scss";
+import Navigation from "./navigation/Navigation";
+import Week from "./week/Week";
 
 const Header = ({ monday, week, ...props }) => {
   return (
     <header className="header">
-      <Tools
-        {...props}
-        monday={monday}
-      />
-      <Days monday={monday} week={week}/>
+      <Navigation {...props} monday={monday} />
+      <Week monday={monday} week={week} />
     </header>
   );
 };

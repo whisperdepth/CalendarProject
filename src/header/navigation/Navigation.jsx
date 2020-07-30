@@ -1,13 +1,9 @@
 import React from "react";
-import "./tools.css";
-import CreateBtn from "./create-btn/CreateBtn";
-import TodayBtn from "./today-btn/TodayBtn";
-import PrevWeekBtn from "./prev-week-btn/PrevWeekBtn";
-import NextWeekBtn from "./next-week-btn/NextWeekBtn";
+import "./navigation.scss";
 import CurrentMonth from "./current-month/CurrentMonth";
 import EventSettings from "./event-settings/EventSettings";
 
-class Tools extends React.Component {
+class Navigation extends React.Component {
   state = {
     display: "none",
   };
@@ -32,20 +28,27 @@ class Tools extends React.Component {
     const { display } = this.state;
 
     return (
-      <div className="tools">
-        <CreateBtn handleDisplay={this.handleDisplay} />
+      <div className="navigation">
+        <button onClick={this.handleDisplay} className="create-btn">
+          + Create
+        </button>
         <EventSettings
           handleEventAdd={handleEventAdd}
           handleClose={this.handleClose}
           display={display}
         />
-        <TodayBtn goCurrentWeek={goCurrentWeek} />
-        <PrevWeekBtn showPrevWeek={showPrevWeek} />
-        <NextWeekBtn showNextWeek={showNextWeek} />
+        <button onClick={goCurrentWeek} className="today-btn">
+          Today
+        </button>
+        <button onClick={showPrevWeek} className="toggle-btn">
+          ←
+        </button>
+        <button onClick={showNextWeek} className="toggle-btn">
+          →
+        </button>
         <CurrentMonth monday={monday} />
       </div>
     );
   }
 }
-
-export default Tools;
+export default Navigation;

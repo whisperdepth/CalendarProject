@@ -1,10 +1,10 @@
 import React from "react";
-import "./days.css";
+import "./days.scss";
 import GMT from "./GMT/GMT";
 import Day from "./day/Day";
 import moment from "moment";
 
-const Days = ({ monday, week }) => {
+const Week = ({ monday, week }) => {
   return (
     <div className="days">
       <GMT monday={monday} />
@@ -22,4 +22,4 @@ const Days = ({ monday, week }) => {
   );
 };
 
-export default Days;
+export default Week;
