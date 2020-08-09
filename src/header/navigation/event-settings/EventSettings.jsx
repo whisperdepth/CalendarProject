@@ -2,7 +2,7 @@ import React from "react";
 import "./event-settings.scss";
 import CloseBtn from "./close-btn/CloseBtn";
 import SaveBtn from "./save-btn/SaveBtn";
-import getMins from "../../../app/GetMins";
+import getMins from "../../../common/GetMins";
 import getHoursArray from "./getHoursArray";
 
 class EventSettings extends React.Component {

@@ -1,7 +1,7 @@
 import React from "react";
 import "./arrow.scss";
 import moment from "moment";
-import getMins from "../../../app/GetMins";
+import getMins from "../../../common/GetMins";
 
 class Arrow extends React.Component {
   state = {

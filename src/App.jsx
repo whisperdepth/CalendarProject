@@ -1,9 +1,9 @@
 import React from "react";
-import Header from "../header/Header.jsx";
-import Week from "../main/Week";
-import GetMonday from "./GetMonday.js";
-import GenerateWeek from "./GenerateWeek.js";
-import { fetchEventsList, createEvent, deleteEvent } from "./eventsGateway.js";
+import Header from "./header/Header.jsx";
+import Week from "./main/Week";
+import GetMonday from "./common/GetMonday.js";
+import GenerateWeek from "./common/GenerateWeek.js";
+import { fetchEventsList, createEvent, deleteEvent } from "./common/eventsGateway.js";
 
 class App extends React.Component {
   state = {

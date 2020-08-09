@@ -1,7 +1,7 @@
 import React from "react";
 import "./event.scss";
 import DeleteBtn from "./delete-btn/DaleteBtn";
-import getMins, { getDuration } from "../../../app/GetMins";
+import getMins, { getDuration } from "../../../common/GetMins";
 
 class Event extends React.Component {
   state = {
